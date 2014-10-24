@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Internalizer</title>
+    </head>
+    <body>
+        <h1>Internalizer</h1>
+        <section id="cat1" class="active">
+            <p>Welcome. Please fill out these measurements to calculate your level of commitment.</p>
+            <div>
+                <div>Measure your treasures<br><span class="rating treasures" data-rating-max="5"></span></div>
+                <div>Minus your troubles<br><span class="rating troubles" data-rating-max="5"></span></div>
+                <div>Add your contributions<br><span class="rating contrib" data-rating-max="5"></span></div>
+                <div>Now subtract your choices<br><span class="rating choices" data-rating-max="5"></span></div>
+            </div>
+
+            <div class="buttons">
+                <a class="btn next dis" href="#">Next</a>
+                <a class="btn reset" href="#">Reset</a>
+            </div>
+        </section>
+
+        <section id="cat1-res">
+            <h2>Level of Commitment</h2>
+            <div id="result"></div>
+
+            <div class="buttons">
+                <a class="btn next" href="#">Next</a>
+                <a class="btn reset" href="#">Reset</a>
+            </div>
+        </section>
+
+        <section id="cat2">
+            <h2>Select one of the following plans:</h2>
+            <div id="plans" class="buttons">
+                <div><a class="btn" data-sel="allin" href="#">All-In</a></div>
+                <div><a class="btn" data-sel="moving" href="#">Moving On</a></div>
+                <div><a class="btn" data-sel="assist" href="#">Assisting Others</a></div>
+            </div>
+            <div class="buttons">
+                <a class="btn reset" href="#">Reset</a>
+            </div>
+        </section>
+
+        <section id="cat3">
+            <div class="result allin">
+                <h2>All-In</h2>
+                <p>Ask:
+                    <ol>
+                        <li>Could I add any treasures?</li>
+                        <li>Identify any new non-acceptable troubles?</li>
+                        <li>Are there any pre-existing contributions?</li>
+                        <li>Are there any other choices that could subtract from your commitment?</li>
+                    </ol>
+                </p>
+            </div>
+
+            <div class="result moving">
+                <h2>Moving On</h2>
+                <p>
+                    <ol>
+                        <li>Are there any treasures you didn't think of before?</li>
+                        <li>Are the troubles really that bad or could they be fixed?</li>
+                        <li>Are there other ways to decrease contributions?</li>
+                        <li>Maximize your other options/choices</li>
+                    </ol>
+                </p>
+            </div>
+
+            <div class="result assist">
+                <h2>Assisting Others</h2>
+                <p>
+                    <ol>
+                        <li>Could other treasures exist for those involved?</li>
+                        <li>Identify any additional troubles that may exist for others?</li>
+                        <li>Could you increase their contributions?</li>
+                        <li>What other choices could exist for them?</li>
+                    </ol>
+                </p>
+            </div>
+
+            <div class="buttons">
+                <a class="btn next" href="#">Now Re-Calculate</a>
+            </div>
+        </section>
+
+        <section>
+
+        <script src="cordova.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/star-rating.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
