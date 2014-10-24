@@ -28,8 +28,9 @@ body {
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     height: 100%;
-    margin: 0px;
+    margin: 0 auto;
     padding: .5em;
+    max-width: 500px;
     width: 100%;
 }
 
