@@ -46,7 +46,7 @@ var app = {
                 parseInt($('.contrib').data('val')) - parseInt($('.choices').data('val'))
             );
             // Normalize to 1--5 stars.
-            commit = Math.round((commit + 10) / 4.);
+            commit = Math.round((commit + 10) / 4.0);
             if (commit === 0) commit = 1; // Start at 1.
 
             // Description for this level.
@@ -98,4 +98,4 @@ var app = {
 
 window.onload = function() {
     app.initialize();
-}
+};
