@@ -19,13 +19,14 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+        // Navigate to subpages on the popstate event.
+        window.addEventListener('popstate', function(e) {
+            $('section').removeClass('active');
+
+            var curPage = window.location.hash || '#cat1';
+            $(curPage).addClass('active');
+        });
+
         $('.rating').starRating({
             minus: false // step minus button
         }).click(function(e) {
@@ -37,8 +38,9 @@ var app = {
 
             $('#cat1 .next').removeClass('dis');
         });
+
         $('#cat1 .next').click(function(e) {
-            if ($(this).hasClass('dis')) return;
+            if ($(this).hasClass('dis')) return false;
 
             // Calculate level of commitment.
             var commit = (
@@ -63,35 +65,30 @@ var app = {
                 $('#result').append('<img src="img/star.gif">');
             }
             $('#result').append('<p>' + desc + '</p>');
-
-            $('section').removeClass('active');
-            $('#cat1-res').addClass('active');
-        });
-
-        $('#cat1-res .next').click(function(e) {
-            $('section').removeClass('active');
-            $('#cat2').addClass('active');
         });
 
         $('#plans .btn').click(function(e) {
             var sel = $(this).data('sel');
 
-            // Switch to cat 3
-            $('section').removeClass('active');
-            $('#cat3 > div').removeClass('active');
             // Show results
+            $('#cat3 > div').removeClass('active');
             $('#cat3 > .' + sel).addClass('active');
-            $('#cat3').addClass('active');
-        });
-
-        $('#cat3 .next').click(function(e) {
-            $('section').removeClass('active');
-            $('#cat1').addClass('active');
         });
 
         $('.btn.reset').click(function(e) {
             window.location.reload();
         });
+
+        // Let's do this.
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        history.pushState({}, '', '#cat1');  // First page.
     }
 };
 
