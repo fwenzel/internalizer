@@ -76,6 +76,7 @@ var app = {
         });
 
         $('.btn.reset').click(function(e) {
+            window.location.hash = '';
             window.location.reload();
         });
 
