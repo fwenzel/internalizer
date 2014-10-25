@@ -45,9 +45,8 @@ var app = {
                 parseInt($('.treasures').data('val')) - parseInt($('.troubles').data('val')) +
                 parseInt($('.contrib').data('val')) - parseInt($('.choices').data('val'))
             );
-            // Normalize to 1--5 stars.
-            commit = Math.round((commit + 10) / 4.0);
-            if (commit === 0) commit = 1; // Start at 1.
+            // Normalize from -8..8 to 1--5 stars.
+            commit = Math.round((commit + 8) * 4 / 17.0) + 1;
 
             // Description for this level.
             var desc = [
