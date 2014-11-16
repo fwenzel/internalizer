@@ -76,7 +76,8 @@ section.active {
     font-size: 120%;
 }
 
-#plans > div {
+#plans > div,
+#recalc .buttons > div {
     margin-bottom: 3em;
 }
 
